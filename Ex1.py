@@ -5,7 +5,7 @@ from Elevator import Elevator
 from Building import Building
 from CallForElevator import CallForElevator
 
-
+#a function that recivies the jason, and cvs files and then read its data.
 def insertFiles():
     global files
     arguments = sys.argv
@@ -17,7 +17,9 @@ def insertFiles():
         defult = ["inputs\\buildings\\B5.json", "inputs\\calls\\Calls_d.csv", "outputs\\output_5d.csv"]
         files = defult
         print("ERROR: missing files, inserted defult files insted")
-        
+
+#a function that recivies a csv file and reads the data from the file
+# and then inserts the data which is a call to an arraylist.      
 def insertCalls(file):
     global calls
     with open(file, 'r') as f:
@@ -26,6 +28,7 @@ def insertCalls(file):
             if isValidCall(call):
                 calls.append(CallForElevator(call))
 
+#a function that checks if the call that is recived from the file is valid.
 def isValidCall(call):
     global building
     source = int(call[2])
@@ -36,23 +39,31 @@ def isValidCall(call):
         return False
     return True
 
+# For each call in call's list finds the best elevator,
+# by selecting the elevator with the shortes time arriving to the call.
 def algorithm():
     global calls
     global building
     elevators = building.getElevators()
-    currTime = 0
+    currTime = 0 # Our Time tracker
     for c in calls:
+        # Finding the elevator with the shortes time to arrive to thr call, and set it to min
         min = building.getElevators()[0]
         for e in elevators:
-            e.removeDoneCalls(currTime)
+            # Removing all the done calls from this elevator's list of calls.
+            e.removeDoneCalls(currTime) 
             if min.timeToArrive(c) > e.timeToArrive(c):
                 min = e
+        # Adds the call to min's list of calls.
         min.addCall(c)
+        # Allocate this call to min
         c.setAllocatedTo(min, building)
+        # Update the finised time of this call.
         c.setFinishedTime(currTime + min.timeToArrive(c) + min.calculateSingleCallTime(c.getSrc(), c.getDest()))
-        currTime = c.getTime()
+        # Update our current time.
+        currTime = c.getTime() 
 
-
+#a function that writes the output file.
 def writeOutput(file):
     global calls
     data = []
@@ -64,21 +75,23 @@ def writeOutput(file):
         output = csv.writer(f)
         output.writerows(data)
 
+# Runs the jar file for testing 
 def runTester(building, output):
-    subprocess.Popen(["powershell.exe", "java -jar tester\\Ex1_checker_V1.2_obf.jar 1111,2222,3333 "+ building + "  "+ output + "  "+ output + "_tester.log"])
+    subprocess.Popen(["powershell.exe", "java -jar tester\\Ex1_checker_V1.2_obf.jar 212471551,211886494,323431965 "+ building + "  "+ output + "  "+ output + "_tester.log"])
 
-
+# Main function
 if __name__ == "__main__":
     files = [] 
+    # Insert the files to list.
     insertFiles()
-    print("Files inserted")
     building = Building(files[0])
-    print("Building inserted")
     calls = []
+    # insert calls from the file.
     insertCalls(files[1])
-    print("Calls inserted")
+    # Run the algorithm.
     algorithm()
-    print("passedAlgo")
+    # Write to output file the calls.
     writeOutput(files[2])
+    # Run the tester.
     runTester(files[0], files[2])
-    print("Done")
+
