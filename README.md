@@ -59,8 +59,7 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
                 self._position = c.getDest()
 
 
-# Returns the time length that will take the elevator to arrive to the call's source,
-    # inculding the time complition of it's current calls.
+# Returns the time length that will take the elevator to arrive to the call's source,inculding the time complition of it's current calls.
     def timeToArrive(self, call):
         currPos = self._position
         time = 0
@@ -109,6 +108,6 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
 
 
 # Credits:
-Mishell tubovitski 211886494.
-Mark Wartenberg 212471551.
-Alina zakhozha 323431965.
+1. Mishell tubovitski 211886494.
+2. Mark Wartenberg 212471551.
+3. Alina zakhozha 323431965.
