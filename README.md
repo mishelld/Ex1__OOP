@@ -98,7 +98,7 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
         self._position = position
 	
 	
-# a function that sets to which elevator to allocate the call
+# a function that sets to which elevator to allocate the call.
 	def setAllocatedTo(self, elevator, building):
 	   isThere = False
 	   for elev in building.getElevators():
