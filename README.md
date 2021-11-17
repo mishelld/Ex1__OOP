@@ -85,19 +85,29 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
         return floors / self._speed + addtime
 
 
-# a function that adds calls to the arraylist
+# a function that adds calls to the arraylist.
     def addCall(self, call):
         self._calls.append(call)
 
 
 
-   # a function that sets the current position of the elevator
+   # a function that sets the current position of the elevator.
     def setPosition(self, position):
         if position < self._minFloor or position > self._maxFloor:
             raise Exception("ERROR: trying to set unvalid floor to: " + str(self._id))
         self._position = position
 	
 	
+# a function that sets to which elevator to allocate the call
+	def setAllocatedTo(self, elevator, building):
+	   isThere = False
+	   for elev in building.getElevators():
+	       if elevator.getId() == elev.getId() :
+		   isThere = True
+	   if not isThere:
+	       raise Exception("ERROR: trying to set unvalid elevator to: \n" + self.__str__())
+	   self._allocatedTo = elevator.getId()
+
  
 # Helpful Links:
 
