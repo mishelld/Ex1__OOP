@@ -13,39 +13,40 @@ The problem in detail:
 4. The request of each call is to go from one floor (source) to another (destination).
 5. In smart elevators, the destination floor is already set at the time of the elevator call and cannot be changed during the elevator ride.
 6. The elevator can stop on floors other than its destination floor only on the condition that it has not yet reached the same floor and if the direction is the same as the original direction of the elevator.
-7.Important to note: Each call comes at a particular time which means the calls do not necessarily overlap.
-8.The goal is to allocate an elevator in the fastest time so that the waiting time for the elevator and the operation time from the moment of the call to the moment when the elevator reaches the destination floor will be the shortest. Needless to say, it is important for the algorithm to provide an answer to all calls without exception.
- 
+7. Important to note: Each call comes at a particular time which means the calls do not necessarily overlap.
+8. The goal is to allocate an elevator in the fastest time so that the waiting time for the elevator and the operation time from the moment of the call to the moment when the elevator reaches the destination floor will be the shortest. Needless to say, it is important for the algorithm to provide an answer to all calls without exception.
+
+
 
 # Motivation:
 
 Unlike the online algorithm, in the off-line, we know the arrival time of the elevator call, and then we can find the optimal schedule between the elevators in the building in relation to their location, speed, state, and direction.
-_____________________________________________________________________________________________________
+
 
 # Algorithm:
 
-def algorithm( ):
-    global calls
-    global building
-    elevators = building.getElevators()
-    currTime = 0 # Our Time tracker
-    for c in calls:
-        # Finding the elevator with the shortes time to arrive to the call, and set it to min
-        min = building.getElevators()[0]
-        for e in elevators:
-            # Removing all the done calls from this elevator's list of calls.
-            e.removeDoneCalls(currTime)
-            if min.timeToArrive(c) > e.timeToArrive(c):
-                min = e
-        # Adds the call to min's list of calls.
-        min.addCall(c)
-        # Allocate this call to min.
-        c.setAllocatedTo(min, building)
-        # Update the finised time of this call.
-        c.setFinishedTime(currTime + min.timeToArrive(c) + min.calculateSingleCallTime(c.getSrc(), c.getDest()))
-        # Update our current time.
-        currTime = c.getTime()
-________________________________________________________________________________________________________________________
+	def algorithm():
+	    global calls
+	    global building
+	    elevators = building.getElevators()
+	    currTime = 0 # Our Time tracker
+	    for c in calls:
+		# Finding the elevator with the shortes time to arrive to the call, and set it to min
+		min = building.getElevators()[0]
+		for e in elevators:
+		    # Removing all the done calls from this elevator's list of calls.
+		    e.removeDoneCalls(currTime)
+		    if min.timeToArrive(c) > e.timeToArrive(c):
+			min = e
+		# Adds the call to min's list of calls.
+		min.addCall(c)
+		# Allocate this call to min.
+		c.setAllocatedTo(min, building)
+		# Update the finised time of this call.
+		c.setFinishedTime(currTime + min.timeToArrive(c) + min.calculateSingleCallTime(c.getSrc(), c.getDest()))
+		# Update our current time.
+		currTime = c.getTime()
+
 
 # Removing all the done calls from to do list of calls.
     def removeDoneCalls(self, currTime):
@@ -56,7 +57,7 @@ ________________________________________________________________________________
                 self._calls.remove(c)
                 # Update the position of the elevator.
                 self._position = c.getDest()
-_______________________________________________________________________________________________________________________
+
 
 # Returns the time length that will take the elevator to arrive to the call's source,
     # inculding the time complition of it's current calls.
@@ -73,7 +74,7 @@ ________________________________________________________________________________
         # Add the time for arriving to call's source.
         time += self.calculateSingleCallTime(currPos, call.getSrc())
         return time
-_______________________________________________________________________________________________________________________
+
 
 # Calculate time that will take the elevator to go to destination floor from it's current position.
     def calculateSingleCallTime(self, currPos, dest):
@@ -83,13 +84,13 @@ ________________________________________________________________________________
         if currPos == dest:  
             addtime -= self._startTime
         return floors / self._speed + addtime
-_______________________________________________________________________________________________________________________
+
 
 # a function that adds calls to the arraylist
     def addCall(self, call):
         self._calls.append(call)
 
-_______________________________________________________________________________________________________________________
+
 
    # a function that sets the current position of the elevator
     def setPosition(self, position):
@@ -107,3 +108,7 @@ ________________________________________________________________________________
 4. https://studylib.net/doc/7878746/on-line-algorithms-versus-off-line-algorithms-for-the-ele…
 
 
+# Credits:
+Mishell tubovitski 211886494.
+Mark Wartenberg 212471551.
+Alina zakhozha 323431965.
