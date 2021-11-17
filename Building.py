@@ -9,11 +9,9 @@ class Building:
             self._minFloor = int(data["_minFloor"])
             self._maxFloor = int(data["_maxFloor"])
             self._elevators = []
-            currId = 0
             for elev in data["_elevators"]:
-                self._elevators.append(Elevator(elev, currId))   
-                currId += 1
-    
+                self._elevators.append(Elevator(elev)) 
+
     def __str__(self):
         print = "[" + str(self._minFloor) + ", " + str(self._maxFloor) + "]\n"
         for elev in self._elevators:

@@ -2,8 +2,8 @@ from CallForElevator import *
 
 class Elevator:
 
-    def __init__(self, data, id):
-        self._id = id
+    def __init__(self, data):
+        self._id = int(data["_id"])
         self._speed = float(data["_speed"])
         self._minFloor = int(data["_minFloor"])
         self._maxFloor = int(data["_maxFloor"])
