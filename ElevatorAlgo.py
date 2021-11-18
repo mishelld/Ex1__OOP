@@ -5,7 +5,7 @@ from Elevator import Elevator
 from Building import Building
 from CallForElevator import CallForElevator
 
-#a function that recivies the jason, and cvs files and then read its data.
+# a function that recivies the jason, and cvs files and then read its data.
 def insertFiles():
     global files
     arguments = sys.argv
@@ -14,11 +14,11 @@ def insertFiles():
         files.append("inputs\\calls\\" + arguments[2])
         files.append("outputs\\" + arguments[3])
     except:
-        defult = ["inputs\\buildings\\B3.json", "inputs\\calls\\Calls_d.csv", "outputs\\output_5d.csv"]
+        defult = ["inputs\\buildings\\B3.json", "inputs\\calls\\Calls_d.csv", "outputs\\output_3d.csv"]
         files = defult
         print("ERROR: missing files, inserted defult files insted")
 
-#a function that recivies a csv file and reads the data from the file
+# a function that recivies a csv file and reads the data from the file
 # and then inserts the data which is a call to an arraylist.      
 def insertCalls(file):
     global calls
@@ -28,7 +28,7 @@ def insertCalls(file):
             if isValidCall(call):
                 calls.append(CallForElevator(call))
 
-#a function that checks if the call that is recived from the file is valid.
+# a function that checks if the call that is recived from the file is valid.
 def isValidCall(call):
     global building
     source = int(call[2])
@@ -63,7 +63,7 @@ def OffLineAlgorithm():
         # Update our current time.
         currTime = c.getTime() 
 
-#a function that writes the output file.
+# a function that writes the output file.
 def writeOutput(file):
     global calls
     input = []
@@ -94,4 +94,3 @@ if __name__ == "__main__":
     writeOutput(files[2])
     # Run the tester.
     runTester(files[0], files[2])
-

@@ -31,13 +31,13 @@ class CallForElevator:
             print += " allocatedTo: " + str(self._allocatedTo)
         return print
 
-    #a function that sets the current state of the call, which is if its done or not
+    # a function that sets the current state of the call, which is if its done or not
     def setState(self, state):
         if not (state == self.INIT or state == self.DONE):
             raise Exception("ERROR: trying to set unvalid state to: \n" + self.__str__())
         self._state = state
 
-    #a function that sets to which elevator to allocate the call
+    # a function that sets to which elevator to allocate the call
     def setAllocatedTo(self, elevator, building):
         isThere = False
         for elev in building.getElevators():
@@ -47,7 +47,7 @@ class CallForElevator:
             raise Exception("ERROR: trying to set unvalid elevator to: \n" + self.__str__())
         self._allocatedTo = elevator.getId()
 
-    #a function that returns the time when a call is finished
+    # a function that returns the time when a call is finished
     def setFinishedTime(self, time):
         self._finishedTime = time
 
@@ -63,7 +63,7 @@ class CallForElevator:
     def getDest(self):
        return  self._dest  
 
-    #a funciton that returns the state of the call, if its done or not    
+    # a funciton that returns the state of the call, if its done or not    
     def getState(self):
         return self._state
 

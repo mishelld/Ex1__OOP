@@ -22,7 +22,7 @@ class Elevator:
         self._calls = []
         self._position = 0
 
-    #a function that print the objects
+    # a function that print the objects
     def __str__(self):
         print = "Elevator number: " + str(self._id) + "\n"
         print += "Speed: " + str(self._speed)
@@ -67,7 +67,7 @@ class Elevator:
             addtime -= self._startTime
         return floors / self._speed + addtime
 
-    #a function that adds calls to the arraylist
+    # a function that adds calls to the arraylist
     def insertCall(self, call):
         self._calls.append(call)
 
@@ -77,42 +77,6 @@ class Elevator:
             raise Exception("ERROR: trying to set unvalid floor to: " + str(self._id))
         self._position = position
 
-    #a funciton that returns the id of the elevator
+    # a funciton that returns the id of the elevator
     def getId(self):
         return self._id
-
-    #a funciton that returns the speed of the elevator
-    def getSpeed(self):
-        return self._speed
-
-    #a function that returns the min floor to which the elevator can go in the building
-    def getMinFloor(self):
-        return self._minFloor
-
-    # a funciton that returns the max floor to whoch the elevator can go in the building
-    def getMaxFloor(self):
-        return self._maxFloor
-
-    # a funciton that returns the closing time of the elevator
-    def getCloseTime(self):
-        return self._closeTime
-
-    # a fucntion that returns the opening time of the elevator
-    def getOpenTime(self):
-        return self._openTime
-
-    # a fucniton that returns the strating time of the elevator
-    def getStartTime(self):
-        return self._startTime
-
-    # a function that returns the stoping time of the elevator
-    def getStopTime(self):
-        return self._stopTime
-
-    # a function that returns the calls for that elevator
-    def getCalls(self):
-        return self._calls
-        
-    # a funciton that returns the current position of the elevator
-    def getPosition(self):
-        return self._position
