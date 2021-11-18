@@ -8,13 +8,13 @@ class CallForElevator:
 
     INIT = 0; DONE = 3
 
-    def __init__(self, data):
-        self._name = data[0]
-        self._time = float(data[1])
-        self._src = int(data[2])
-        self._dest = int(data[3])
-        self._state = int(data[4])
-        self._allocatedTo = int(data[5])
+    def __init__(self, input):
+        self._name = input[0]
+        self._time = float(input[1])
+        self._src = int(input[2])
+        self._dest = int(input[3])
+        self._state = int(input[4])
+        self._allocatedTo = int(input[5])
         self._finishedTime = -1
 
     # print the objects of the call

@@ -8,11 +8,11 @@ class Building:
 
     def __init__(self, file):
         with open(file,'r') as f:
-            data = json.load(f)
-            self._minFloor = int(data["_minFloor"])
-            self._maxFloor = int(data["_maxFloor"])
+            input = json.load(f)
+            self._minFloor = int(input["_minFloor"])
+            self._maxFloor = int(input["_maxFloor"])
             self._elevators = []
-            for elev in data["_elevators"]:
+            for elev in input["_elevators"]:
                 self._elevators.append(Elevator(elev)) 
 
     #prints the objects of the building

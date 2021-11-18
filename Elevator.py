@@ -10,15 +10,15 @@ class Elevator:
     # the strat time of the elevator, the stoping time of the elevator, list of it's calls to finish and
     # it's position
 
-    def __init__(self, data):
-        self._id = int(data["_id"])
-        self._speed = float(data["_speed"])
-        self._minFloor = int(data["_minFloor"])
-        self._maxFloor = int(data["_maxFloor"])
-        self._closeTime = float(data["_closeTime"])
-        self._openTime = float(data["_openTime"])
-        self._startTime = float(data["_startTime"])
-        self._stopTime = float(data["_stopTime"])
+    def __init__(self, input):
+        self._id = int(input["_id"])
+        self._speed = float(input["_speed"])
+        self._minFloor = int(input["_minFloor"])
+        self._maxFloor = int(input["_maxFloor"])
+        self._closeTime = float(input["_closeTime"])
+        self._openTime = float(input["_openTime"])
+        self._startTime = float(input["_startTime"])
+        self._stopTime = float(input["_stopTime"])
         self._calls = []
         self._position = 0
 
@@ -68,7 +68,7 @@ class Elevator:
         return floors / self._speed + addtime
 
     #a function that adds calls to the arraylist
-    def addCall(self, call):
+    def insertCall(self, call):
         self._calls.append(call)
 
     # a funciton that sets the current position of the elevator
