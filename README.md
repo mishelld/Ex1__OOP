@@ -111,13 +111,13 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
  
 # Helpful Links:
 
-1. ttps://www.geeksforgeeks.org/smart-elevator-pro-geek-cup/
+1. https://www.geeksforgeeks.org/smart-elevator-pro-geek-cup/
 2. https://medium.com/geekculture/system-design-elevator-system-design-interview-question-6e8d03ce1b44
 3.  https://www.hellocodeclub.com/design-elevator-system-java/
 4. https://studylib.net/doc/7878746/on-line-algorithms-versus-off-line-algorithms-for-the-ele…
 
 
 # Credits:
-1. Mishell tubovitski 211886494.
-2. Mark Wartenberg 212471551.
+1. Mishell dubovitski 211886494.
+2. Mark vertenberg 212471551.
 3. Alina zakhozha 323431965.
