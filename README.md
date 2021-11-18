@@ -108,7 +108,7 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
 	       raise Exception("ERROR: trying to set unvalid elevator to: \n" + self.__str__())
 	   self._allocatedTo = elevator.getId()
 
- #UML:
+ # UML:
 
  ![diagram - Page 2](https://user-images.githubusercontent.com/93255163/142493956-c22bcf12-fdf7-48df-804c-16a953190511.png)
 
