@@ -114,6 +114,9 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
 # Report results:
 ![d7e8df7a_1](https://user-images.githubusercontent.com/93255163/142496370-4bb65169-f64f-453e-9154-a3104c66e076.png)
 
+# Bonus:
+Simulation Link: https://www.youtube.com/watch?v=d09JXNFEY3g&t=29s
+
 # Helpful Links:
 
 1. Project Idea | Smart Elevator : On this site you can find an explanation of the operation process of smart elevators, how the elevator is assigned to the user and more. We used the site to understand the process and adapt it to the offline algorithm.
