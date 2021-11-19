@@ -108,7 +108,12 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
 	       raise Exception("ERROR: trying to set unvalid elevator to: \n" + self.__str__())
 	   self._allocatedTo = elevator.getId()
 
- 
+ # UML:
+ ![diagram - Page 2](https://user-images.githubusercontent.com/93255163/142493956-c22bcf12-fdf7-48df-804c-16a953190511.png)
+
+# Report results:
+![d7e8df7a_1](https://user-images.githubusercontent.com/93255163/142496370-4bb65169-f64f-453e-9154-a3104c66e076.png)
+
 # Helpful Links:
 
 1. Project Idea | Smart Elevator : On this site you can find an explanation of the operation process of smart elevators, how the elevator is assigned to the user and more. We used the site to understand the process and adapt it to the offline algorithm.
@@ -117,12 +122,10 @@ Link:https://www.geeksforgeeks.org/smart-elevator-pro-geek-cup/
 2. System Design — Elevator System Design Interview Question: On this site you can find a guide who plans an elevator system and also implements the actual solution, but it is important to note that these are regular elevators and not smart elevators, and yet you can get inspiration and motivation from the site.
 Link:https://medium.com/geekculture/system-design-elevator-system-design-interview-question-6e8d03ce1b44
 
-
 3. On-line Algorithms versus Off-line Algorithms for the Elevator: On this site you can find most of the differences between the online algorithm and the offline, in addition to an in-depth explanation of the problem space, solutions, actual algorithms and more.
 Link:https://studylib.net/doc/7878746/on-line-algorithms-versus-off-line-algorithms-for-the-ele…
 
-
 # Credits:
-1. Mishell dubovitski 211886494.
-2. Mark vertenberg 212471551.
-3. Alina zakhozha 323431965.
+1. Mishell dubovitski.
+2. Mark vertenberg.
+3. Alina zakhozha.
