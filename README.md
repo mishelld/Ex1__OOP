@@ -109,7 +109,7 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
 	   self._allocatedTo = elevator.getId()
 
  # UML:
-![diagram - Page 2 (3)](https://user-images.githubusercontent.com/93255163/142671725-90930e24-3486-44df-b181-16da71378f2c.png)
+![diagram_-_Page_2_7](https://user-images.githubusercontent.com/93255163/142674159-f0934757-04a7-4006-9abb-c81806b11ca6.png)
 
 # Report results:
 ![d7e8df7a_1](https://user-images.githubusercontent.com/93255163/142496370-4bb65169-f64f-453e-9154-a3104c66e076.png)
