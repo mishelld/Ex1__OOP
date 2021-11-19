@@ -122,7 +122,6 @@ Link:https://www.geeksforgeeks.org/smart-elevator-pro-geek-cup/
 2. System Design — Elevator System Design Interview Question: On this site you can find a guide who plans an elevator system and also implements the actual solution, but it is important to note that these are regular elevators and not smart elevators, and yet you can get inspiration and motivation from the site.
 Link:https://medium.com/geekculture/system-design-elevator-system-design-interview-question-6e8d03ce1b44
 
-
 3. On-line Algorithms versus Off-line Algorithms for the Elevator: On this site you can find most of the differences between the online algorithm and the offline, in addition to an in-depth explanation of the problem space, solutions, actual algorithms and more.
 Link:https://studylib.net/doc/7878746/on-line-algorithms-versus-off-line-algorithms-for-the-ele…
 
