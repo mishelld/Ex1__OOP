@@ -18,7 +18,7 @@ def insertFiles():
         files.append("inputs\\buildings\\" + arguments[1])
         files.append("inputs\\outputs\\" + arguments[2])
     except:
-        defult = ["inputs\\buildings\\B5.json", "results\\output_5b.csv"]
+        defult = ["inputs\\buildings\\B4.json", "results\\output_4b.csv"]
         files = defult
         print("ERROR: missing files, inserted defult files instead")
 
@@ -89,6 +89,7 @@ def drawElevators(screen, currTime, space, width):
         if e.getReset():
             e.setCounter(currTime)
             e.setReset(False)
+        drawStickMan(screen, e, x, y)
         moveElevator(e, diraction, currTime, timeToPassFloor)
         drawCurrentFloor(screen, e, x, y, width)
         showId(screen, e.getId(), x, y, width)
@@ -156,6 +157,13 @@ def drawDirection(screen, elev, x, y, width):
             drawStatic(screen, x, y - 30, x + width / 2 - 10, y - 30)
             return static
 
+def drawStickMan(screen, elev, x, y):
+    if len(elev.getCalls()) > 0:
+        if elev.getCalls()[0].getState() == CallForElevator.GOING2DEST:
+            filename = 'stickMan.png'
+            picture = pygame.image.load(filename)
+            picture = pygame.transform.scale(picture, (80, 100))
+            screen.blit(picture, (x, y))
 
 def drawUp(screen, x1, y1, x2, y2, x3, y3):
     pygame.draw.polygon(screen, GREEN, [[x1, y1], [x2, y2], [x3, y3]])
