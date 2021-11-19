@@ -76,7 +76,7 @@ def writeOutput(file):
         output.writerows(input)
 
 # Runs the jar file for testing 
-def runTester(building, output):
+def test(building, output):
     subprocess.Popen(["powershell.exe", "java -jar tester\\Ex1_checker_V1.2_obf.jar 212471551,211886494,323431965 "+ building + "  "+ output + "  "+ output + "_tester.log"])
 
 # Main function
@@ -93,5 +93,5 @@ if __name__ == "__main__":
     # Write to output file the calls.
     writeOutput(files[2])
     # Run the tester.
-    runTester(files[0], files[2])
+    test(files[0], files[2])
     print("DONE")
