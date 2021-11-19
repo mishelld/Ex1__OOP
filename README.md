@@ -127,6 +127,6 @@ Link:https://medium.com/geekculture/system-design-elevator-system-design-intervi
 Link:https://studylib.net/doc/7878746/on-line-algorithms-versus-off-line-algorithms-for-the-ele…
 
 # Credits:
-1. Mishell dubovitski 211886494.
-2. Mark vertenberg 212471551.
-3. Alina zakhozha 323431965.
+1. Mishell dubovitski.
+2. Mark vertenberg.
+3. Alina zakhozha.
