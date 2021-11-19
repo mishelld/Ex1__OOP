@@ -18,7 +18,7 @@ def insertFiles():
         files.append("inputs\\buildings\\" + arguments[1])
         files.append("inputs\\outputs\\" + arguments[2])
     except:
-        defult = ["inputs\\buildings\\B4.json", "results\\output_4b.csv"]
+        defult = ["inputs\\buildings\\B5.json", "results\\output_5d.csv"]
         files = defult
         print("ERROR: missing files, inserted defult files instead")
 
