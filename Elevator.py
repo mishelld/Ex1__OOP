@@ -21,6 +21,8 @@ class Elevator:
         self._stopTime = float(input["_stopTime"])
         self._calls = []
         self._position = 0
+        self._reset = True
+        self._counter = 0
 
     # a function that print the objects
     def __str__(self):
@@ -58,7 +60,7 @@ class Elevator:
         time += self.calculateSingleCallTime(currPos, call.getSrc())
         return time
     
-    # Calculate time that will take tahe elevator to go to destination floor from it's current position.
+    # Calculate time that will take taKe elevator to go to destination floor from it's current position.
     def calculateSingleCallTime(self, currPos, dest):
         floors = abs(dest - currPos) # Number of floors to pass.
         addtime = self._startTime + self._stopTime + self._openTime + self._closeTime # Time of elevator's functions.
@@ -71,12 +73,38 @@ class Elevator:
     def insertCall(self, call):
         self._calls.append(call)
 
+    def removeCall(self, call):
+        try:
+            self._calls.remove(call)
+        except:
+            raise Exception("ERROR: trying to remove undefined call from: " + str(self._id))
+
     # a funciton that sets the current position of the elevator
     def setPosition(self, position):
         if position < self._minFloor or position > self._maxFloor:
             raise Exception("ERROR: trying to set unvalid floor to: " + str(self._id))
         self._position = position
 
+    def setReset(self, reset):
+        self._reset = reset
+
+    def setCounter(self, counter):
+        self._counter = counter
     # a funciton that returns the id of the elevator
     def getId(self):
         return self._id
+
+    def getPosition(self):
+        return self._position
+
+    def getCalls(self):
+        return self._calls
+
+    def getSpeed(self):
+        return self._speed
+
+    def getReset(self):
+        return self._reset
+
+    def getCounter(self):
+        return self._counter

@@ -14,7 +14,7 @@ def insertFiles():
         files.append("inputs\\calls\\" + arguments[2])
         files.append("outputs\\" + arguments[3])
     except:
-        defult = ["inputs\\buildings\\B3.json", "inputs\\calls\\Calls_d.csv", "outputs\\output_3d.csv"]
+        defult = ["inputs\\buildings\\B3.json", "inputs\\calls\\Calls_b.csv", "outputs\\output_3b.csv"]
         files = defult
         print("ERROR: missing files, inserted defult files insted")
 
@@ -94,3 +94,4 @@ if __name__ == "__main__":
     writeOutput(files[2])
     # Run the tester.
     runTester(files[0], files[2])
+    print("DONE")

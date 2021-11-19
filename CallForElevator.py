@@ -6,7 +6,7 @@ class CallForElevator:
     # name of the call, time of the call,the Src floor of the call,the dest floor of the call
     # the state of the call,which elevator the call is allocated to.
 
-    INIT = 0; DONE = 3
+    INIT = 0; GOING2SRC = 1; GOING2DEST = 2; DONE = 3
 
     def __init__(self, input):
         self._name = input[0]
@@ -33,7 +33,7 @@ class CallForElevator:
 
     # a function that sets the current state of the call, which is if its done or not
     def setState(self, state):
-        if not (state == self.INIT or state == self.DONE):
+        if not (state == self.INIT or state == self.GOING2SRC or state == self.GOING2DEST or state == self.DONE):
             raise Exception("ERROR: trying to set unvalid state to: \n" + self.__str__())
         self._state = state
 
