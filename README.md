@@ -115,7 +115,7 @@ Unlike the online algorithm, in the off-line, we know the arrival time of the el
 ![d7e8df7a_1](https://user-images.githubusercontent.com/93255163/142496370-4bb65169-f64f-453e-9154-a3104c66e076.png)
 
 # Bonus:
-Simulation Link: https://www.youtube.com/watch?v=d09JXNFEY3g&t=29s
+Simulation Link: https://www.youtube.com/watch?v=d09JXNFEY3g
 
 # Helpful Links:
 
